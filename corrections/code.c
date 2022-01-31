@@ -123,7 +123,7 @@ int fini(int **grille, int n){
 
 
 void exo4(char *s){
-	int i = 0,cpt =0;
+	int i = 0;
 	while(s[i] != '\0'){
 		if ( s[i] <= 'z' && s[i] >= 'a' && i%2 ==0){ //Le modulo 2 permet de traiter que un caractère sur 2
 			s[i] = s[i] +'A' - 'a';
