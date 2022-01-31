@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Exercices C</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <meta name="theme-color" content="#7952b3">
+</head>
+<body class="bg-secondary bg-opacity-25">
+    <div class="px-4 py-5 my-5 text-center bg-white shadow">
+        <img src="pas_utile/elie.jpg" class="d-block mx-auto mb-4 rounded" height="100">
+        <h1 class="text-primary fw-bold">Exercices pour l'exam de C</h1>
+        <p>
+            Voici quelques exercices pour vous entrainer pour l'exam. <br>
+            La correction se trouve dans le dossier corrections.<br>
+            Bonne chance !!<br>
+            <br>
+            Si vous avez des questions ou qu'il y a un pb dans le sujet -> @Antonin#8156 sur Discord
+            <br>
+            PS: Vous trouverez toutes les fonctions importantes <a href="pas_utile/a_retenir.html">ici</a>
+        </p>
+        
+    </div>
+
+
+    <div class="px-4 py-5 my-5 bg-white shadow">
+        <h2 class="text-secondary">
+            Exercice 1:
+        </h2>
+        <p>
+            A partir d'une chaine de caractère ne contenant que des chiffres, comptez le nombre d'occurence de chaque chiffres et mettez le résultat dans le tableau
+            <br>
+            Exemple: "55342625910" -> [1,1,2,1,1,3,1,0,0,1] (l'indice 0 du tableau contient le nombre d'occurences du 0 etc...)
+        </p>
+    </div>
+
+    <div class="px-4 py-5 my-5 bg-white shadow">
+        <h2 class="text-secondary">
+            Exercice 2:
+        </h2>
+        <p>
+            A partir d'une chaine de caractère ne contenant que des chiffres, retournez dans la variable r cette même chaine à la différence que si un chiffre apparait plusieurs fois d'affilé, marquez ce chiffre*nombre_d'occurence_d'affilé.
+            <br>
+            Exemple: "555244366667" -> "5*3 2 2*4 3 6*4 7"
+        </p>
+    </div>
+
+    <div class="px-4 py-5 my-5 bg-white shadow">
+        <h2 class="text-secondary">
+            Exercice 3: Mini <a href="https://fr.wikipedia.org/wiki/Bataille_navale_(jeu)">bataille navale</a>
+        </h2>
+        <p>
+            Le but de cet exercice est de créer une version simplifié d'une bataille navale. 
+            Pour cela, nous avons besoin d'un plateau de jeu représenté par un tableau à 2 dimensions. 
+            Pour simplifier, on considère que chaque bateaux fait 1 case de long.
+            <br>
+            Une case du tableau peut avoir 4 valeurs différentes:
+            <ul>
+                <li>0: La case est vide (valeur par défaut)</li>
+                <li>1: Un bateau est présent dans la case</li>
+                <li>2: Le joueur à tiré et à touché un bateau</li>
+                <li>3: Le joueur à tiré dans une case ou il n'y avait pas de bateaux</li>
+            </ul>
+            <br>
+            <b>1)</b> A partir d'une taille n passée en paramètre, allouez dynamiquement et retournez un tableau à 2 dimensions de taille n*n avec des 0 à l'intérieur
+            <br><br>
+            <b>2)</b> Créez la fonction pour libérer la grille
+            <br><br>
+            <p>
+                <a class="btn btn-warning" data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse1">
+                  Spoil: Une erreur de segmentation?
+                </a>
+            </p>
+            <div class="collapse" id="collapse1">
+                <div class="card card-body">
+                    Lors de la libération de mémoire, il faut vérifier que le tableau existe bien!
+                </div>
+            </div>
+            <br>
+            <b>3)</b> A partir du nom d'un fichier et de la grille de jeux, récupérez les coordonées des cases et mettez un 1 à l'intérieur de celles-ci.
+            <br>Des coordonées sont représentés par deux entiers.
+            <br><br>
+            <p>
+                <a class="btn btn-warning" data-bs-toggle="collapse" href="#collapse2" role="button" aria-expanded="false" aria-controls="collapse2">
+                  Spoil: Encore une erreur de segmentation?
+                </a>
+            </p>
+            <div class="collapse" id="collapse2">
+                <div class="card card-body">
+                    Est ce que les coordonées dans le fichier ne sont pas supérieurs à la taille n de la grille? Est ce que le fichier passé en paramètre existe?
+                </div>
+            </div>
+            <br><br>
+            <b>4)</b> Touché? Avec des coordonées x et y (des entiers), si un bateau est présent dans la case, changez la valeur de la case par 2 et retournez 1 sinon changez la valeur de la case par 3 et retournez 0
+            <br><br>
+            <b>5)</b> Fini? On considère la partie comme finie quand il n'y a plus de bateaux sur la grille de jeux. Si la partie est finie retournez 1, 0 sinon. Un bateau est représenté par un 1 dans la grille
+
+        </p>
+
+    </div>
+
+    <div class="px-4 py-5 my-5 bg-white shadow">
+        <h2 class="text-secondary">
+            Exercice 4: C'EsT PaS ToI QuI DeCiDE
+        </h2>
+        <p>
+            Le but est simple: mettre un caractère sur 2 en majuscule (Commencer par une majuscule). 
+            <br>
+            Exemple: "hello world" -> "HeLlO WoRlD" 
+        </p>
+    </div>
+
+
+    <footer class="bg-white align-items-center py-3 border-top">
+        <p class="text-secondary text-center">
+            © Antonin DEVIDAL
+        </p> 
+    </footer>
+
+</body>
+</html>
