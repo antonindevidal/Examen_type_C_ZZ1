@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <meta name="theme-color" content="#7952b3">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 </head>
 <body class="bg-secondary bg-opacity-25">
     <div class="px-5 py-5 my-5 text-center bg-white shadow">
@@ -36,10 +37,29 @@
             <br>
             <b>int strlen( char * source )</b>: Retourne la taille de la chaine de carac
             <br>
-            <b>strcat( char * dest , char * source)</b>: Ajoute source à la fin de dest
+            <b>strcat( char * dest , char * source)</b>: Ajoute source à la fin de dest. 
+            <br>
+            Exemple:
+
+            <pre class="prettyprint">
+                <code language="language-c">
+                    char ma_var[50] = "bonjour";
+                    strcat(ma_var,"aurevoir");
+                    printf("%s",ma_var); -> "bonjouraurevoir"</code>
+            </pre>
+
+
+
             <br>
             <b>sprintf( char * dest , char * format, others...)</b>: Fonctionne comme un printf seulement, au lieu d'afficher dans la console, la fonction stocke dans la variable de destination
-            <br>Exemple: sprintf(ma_chaine,"%d %d", entier1, entier2)
+            <br>
+            Exemple:
+            <pre class="prettyprint">
+                <code language="language-c">
+                    char ma_var[50] = "bonjour";
+                    sprintf(ma_var,"%d %s", 42, "Hello world");
+                    printf("%s",ma_var); -> "42 Hello world"</code>
+            </pre>
             <br>
         </p>
     </div>
@@ -53,6 +73,15 @@
             <br>
             <b>free(void *ptr)</b>: Libère de la mémoire dynamiquement allouée
             <br>
+            Exemple pour un tableau d'entier de taille 10:
+            <pre class="prettyprint">
+                <code language="language-c">
+                    // Le (int*) correspond au type de notre variable
+                    // 10 * sizeof(int), on veut que notre tableau soit de 10 fois la taille d'un entier
+                    int *tableau = (int*) malloc( 10 * sizeof(int));
+                    
+                    free(tableau);</code>
+            </pre>
         </p>
     </div>
 
@@ -72,6 +101,26 @@
             <br>
             <b>int feof(FILE * file)</b>: Retourne 0 si on est à la fin du fichier
             <br>
+            <b>fscanf(FILE *stream, const char *format, ...)</b>: Fonctionne comme un scanf mais avec le fichier en premier paramètre. Ne pas oublier de passer l'adresse des variables en paramètre et non la valeur (mettre un & si ce n'est pas un pointeur)
+            <br>
+            <br>
+            Exemple  pour la lecture d'un fichier contenant que des entiers:
+            <pre class="prettyprint">
+                <code language="language-c">
+                    int entier;
+                    char mon_fichier[50] = "mon_fichier.txt";
+                    FILE* file = fopen(mon_fichier, "r") // Ouverture en lecture
+
+                    if (file != NULL){// Vérification que l'ouverture du fichier s'est bien faite
+
+                        while(!feof(fe)){ // Tant que notre fichier n'est pas fini
+
+                            fscanf(file,"%d", &entier); // Ne pas oublier le & si la variable n'est pas un pointeur
+                            //traitement
+                        }
+                        fclose(fe);
+                    }</code>
+            </pre>
         </p>
     </div>
 

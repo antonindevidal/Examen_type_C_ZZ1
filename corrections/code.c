@@ -87,7 +87,7 @@ int** lecture_coordonees(int ** grille, int n, char * fichier){
 	if(fe != NULL){//Vérifier que l'ouverture s'est bien passée
 
 		while(!feof(fe)){ //Tant qu'on est pas à la fin du fichier
-			fscanf(fe,"%d%d",&x,&y); //Lecture d'une paire de coordonées
+			fscanf(fe,"%d%d",&x,&y); //Lecture d'une paire de coordonées /!\ ne pas oublier de passer l'adresse de la variable
 			if( x >0 && x < n && y >0 && y < n){ //Bien vérifier que les coordonnées sont biens compris dans la taille de la matrice
 				grille[x][y] =1; //On met 1 dans la case de coordonées x y
 			}
